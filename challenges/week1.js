@@ -1,65 +1,93 @@
 function capitalize(word) {
-  if (word === undefined) throw new Error("word is required");
-  // Add your code here!
+
+  return word.charAt(0).toUpperCase() + word.slice(1);
 }
+
+
 
 function generateInitials(firstName, lastName) {
-  if (firstName === undefined) throw new Error("firstName is required");
-  if (lastName === undefined) throw new Error("lastName is required");
-  // Add your code here!
+
+  var getInitials = firstName[0] + "." + lastName[0];
+  return getInitials;
 }
 
+
 function addVAT(originalPrice, vatRate) {
-  if (originalPrice === undefined) throw new Error("originalPrice is requied");
-  if (vatRate === undefined) throw new Error("vatRate is required");
-  // Add your code here!
+
+  var sum = (originalPrice / 100) * vatRate + originalPrice;
+
+  return sum;
+
 }
 
 function getSalePrice(originalPrice, reduction) {
-  if (originalPrice === undefined) throw new Error("originalPrice is required");
-  if (reduction === undefined) throw new Error("reduction is required");
-  // Add your code here!
+
+  var sum = (reduction / 100) * originalPrice;
+
+  return originalPrice - sum;
 }
 
 function getMiddleCharacter(str) {
-  if (str === undefined) throw new Error("str is required");
-  // Add your code here!
+
+  let length = (str.length);
+  let middle = Math.floor(length / 2);
+
+    if (length % 2 === 0) { 
+      //if even
+      return str[middle - 1] + str[middle];
+    } 
+
+
+   else {
+     //if odd
+    
+  return str[middle]
+     
+    }
+  }
+
+
+  function reverseWord(word) {
+    var wordArr = word.split("");
+    var reverseWordArr = wordArr.reverse();
+    var reverseWord = reverseWordArr.join("");
+    return reverseWord;
+  }
+
+  function reverseAllWords(words) {
+    return words.split(' ').map(function(word) {
+      return word.split('').reverse().join('');
+    }).join(' ');
+  }
+
+  function countLinuxUsers(users) {
+  
+    
+
 }
 
-function reverseWord(word) {
-  if (word === undefined) throw new Error("word is required");
-  // Add your code here!
-}
+  function getMeanScore(scores) {
+    var total = 0, i;
+    for (i = 0; i < scores.length; i += 1) {
+        total += scores[i];
+    }
+    return total / scores.length;
+  }
 
-function reverseAllWords(words) {
-  if (words === undefined) throw new Error("words is required");
-  // Add your code here!
-}
+  function simpleFizzBuzz(n) {
+    if (n === undefined) throw new Error("n is required");
+    // Add your code here!
+  }
 
-function countLinuxUsers(users) {
-  if (users === undefined) throw new Error("users is required");
-  // Add your code here!
-}
-
-function getMeanScore(scores) {
-  if (scores === undefined) throw new Error("scores is required");
-  // Add your code here!
-}
-
-function simpleFizzBuzz(n) {
-  if (n === undefined) throw new Error("n is required");
-  // Add your code here!
-}
-
-module.exports = {
-  capitalize,
-  generateInitials,
-  addVAT,
-  getSalePrice,
-  getMiddleCharacter,
-  reverseWord,
-  reverseAllWords,
-  countLinuxUsers,
-  getMeanScore,
-  simpleFizzBuzz
-};
+  module.exports = {
+    capitalize,
+    generateInitials,
+    addVAT,
+    getSalePrice,
+    getMiddleCharacter,
+    reverseWord,
+    reverseAllWords,
+    countLinuxUsers,
+    getMeanScore,
+    simpleFizzBuzz
+  };
